@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 import { useAppStore } from '../../store/appStore'
 import { DEPT_CONFIG } from '../../data/mockData'
 import MessageItem from './MessageItem'
@@ -57,7 +57,7 @@ const AIIcon = () => (
 )
 
 function ChannelHeader() {
-  const { active_channel_id, channels, users, setAIMode, toggleAIPanel } = useAppStore()
+  const { active_channel_id, channels, users, setAIMode } = useAppStore()
   const channel = channels.find(c => c.id === active_channel_id)
   if (!channel) return null
 

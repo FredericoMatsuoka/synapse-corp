@@ -1,6 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAppStore } from '../../store/appStore'
-import { MOCK_USERS } from '../../data/mockData'
 
 const CloseIcon = () => (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
@@ -50,7 +49,7 @@ const formatTime = (iso: string) => {
 }
 
 export default function NotificationsPanel() {
-  const { ui, toggleNotifications, notifications, markNotificationRead, users } = useAppStore()
+  const { ui, toggleNotifications, notifications, markNotificationRead } = useAppStore()
 
   return (
     <AnimatePresence>
@@ -88,7 +87,6 @@ export default function NotificationsPanel() {
                 <p className="text-sm text-text-3 text-center py-8">Sem notificacoes</p>
               ) : (
                 notifications.map(n => {
-                  const fromUser = n.from ? users.find(u => u.id === n.from) : null
                   return (
                     <motion.button
                       key={n.id}

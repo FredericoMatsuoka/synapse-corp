@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAppStore } from '../../store/appStore'
-import { MOCK_USERS } from '../../data/mockData'
 import Avatar from '../shared/Avatar'
 
 const CloseIcon = () => (

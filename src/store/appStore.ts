@@ -178,7 +178,7 @@ export const useAppStore = create<AppState>((set, get) => ({
   },
 
   sendDM: (dm_id, content) => {
-    const { current_user, direct_messages } = get()
+    const { current_user } = get()
     const newMsg: Message = {
       id: `dm_${++msgCounter}`,
       channel_id: dm_id,

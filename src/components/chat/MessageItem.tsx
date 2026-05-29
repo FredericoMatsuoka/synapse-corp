@@ -67,7 +67,7 @@ function TaskCard({ data }: { data: NonNullable<Message['task_data']> }) {
   )
 }
 
-export default function MessageItem({ message, author, showAvatar, isOwn }: MessageItemProps) {
+export default function MessageItem({ message, author, showAvatar }: MessageItemProps) {
   const { openProfile, setAIMode } = useAppStore()
   const [showReactionPicker, setShowReactionPicker] = useState(false)
   const isSystem = message.type === 'system'
